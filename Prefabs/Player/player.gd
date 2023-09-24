@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var SHELL: PackedScene
-const MUZZLE_DISTANCE = 100
+const MUZZLE_DISTANCE = 80
 
 
 func _input(event):

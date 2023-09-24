@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsr6m6ttiyujm"]
+
+[ext_resource type="Texture2D" uid="uid://w1k1tyhpakej" path="res://Assets/Topdown Tanks Redux/PNG/Retina/explosion1.png" id="1_eoy4g"]
+[ext_resource type="Texture2D" uid="uid://c8qg7agpuelwb" path="res://Assets/Topdown Tanks Redux/PNG/Retina/explosion2.png" id="2_gctwe"]
+[ext_resource type="Texture2D" uid="uid://0orj4u0urqsm" path="res://Assets/Topdown Tanks Redux/PNG/Retina/explosion3.png" id="3_kuljr"]
+[ext_resource type="Texture2D" uid="uid://bidn3ptlajiax" path="res://Assets/Topdown Tanks Redux/PNG/Retina/explosion4.png" id="4_emesv"]
+[ext_resource type="Texture2D" uid="uid://caaq05igumms8" path="res://Assets/Topdown Tanks Redux/PNG/Retina/explosion5.png" id="5_ir5v3"]
+[ext_resource type="Script" path="res://Prefabs/Explosion/explosion_effect.gd" id="6_nvf60"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5t07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eoy4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gctwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kuljr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_emesv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ir5v3")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="ExplosionEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_o5t07")
+frame_progress = 0.183038
+script = ExtResource("6_nvf60")
+
+[connection signal="animation_finished" from="." to="." method="animation_finished"]
+[connection signal="animation_looped" from="." to="." method="animation_finished"]
