@@ -4,12 +4,11 @@ const SPEED = 500
 const MAX_DISTANCE = pow(10000,2)
 @export var EXPLOSION_EFFECT: PackedScene
 
-var CENTER
+@onready var CENTER = get_viewport_rect().size / 2
 
 
 func _ready():
 	velocity = Vector2.UP.rotated(rotation) * SPEED
-	CENTER = get_viewport_rect().size / 2
 
 
 func _physics_process(delta):
@@ -24,8 +23,8 @@ func _physics_process(delta):
 		rotate(1.5708) # 90 deg offset
 
 
-func kill(pos):
+func kill(pos: Vector2):
 	var explosion = EXPLOSION_EFFECT.instantiate() as AnimatedSprite2D
-	explosion.position = position
+	explosion.position = pos
 	self.add_sibling(explosion)
 	queue_free()
