@@ -6,8 +6,9 @@ const MUZZLE_DISTANCE = 80
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		$BarrelSprite.look_at(event.position)
-		$BarrelSprite.rotate(1.5708) # 90 deg offset
+		var angle = position.direction_to(event.position).angle() + 1.5708
+		$BarrelSprite.rotation = snapped(angle, PI/4) 
+		#$BarrelSprite.rotate(1.5708) # 90 deg offset
 	
 	if event.is_action_pressed("Fire"):
 		var shot_shell = SHELL.instantiate() as CharacterBody2D

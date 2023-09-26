@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://c1vxmtwx6qfw2" path="res://Assets/Topdown Tanks Redux/PNG/Retina/fenceRed.png" id="1_ombfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1kkd"]
-size = Vector2(96, 32)
+size = Vector2(96, 9)
 
 [node name="TestBlock" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_g1kkd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
