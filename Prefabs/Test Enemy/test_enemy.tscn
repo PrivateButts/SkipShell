@@ -1,21 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://byde1nkdi0yvl"]
+[gd_scene load_steps=3 format=3 uid="uid://byde1nkdi0yvl"]
 
-[ext_resource type="Script" path="res://Prefabs/Test Enemy/test_enemy.gd" id="1_l8ltu"]
 [ext_resource type="Texture2D" uid="uid://c7owa0ra7t0bd" path="res://Prefabs/Test Enemy/tankBody_red.png" id="1_w7mc3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnj2"]
-size = Vector2(34, 36)
+[ext_resource type="PackedScene" uid="uid://dbkywdw63ydih" path="res://Prefabs/enemy_manager.tscn" id="2_2j5ac"]
 
 [node name="TestEnemy" type="Node2D"]
-script = ExtResource("1_l8ltu")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_fcnj2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_w7mc3")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="EnemyManager" parent="." instance=ExtResource("2_2j5ac")]

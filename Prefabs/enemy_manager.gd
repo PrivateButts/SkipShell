@@ -1,8 +1,9 @@
-extends Node2D
+extends Area2D
 
 @export var LIFE = 1
 
-func _on_area_2d_body_entered(body:Shell):
+
+func _on_body_entered(body:Shell):
 	LIFE -= 1;
 	if LIFE < 1:
 		die()

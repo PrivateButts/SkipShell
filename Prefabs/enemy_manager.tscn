@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbkywdw63ydih"]
+
+[ext_resource type="Script" path="res://Prefabs/enemy_manager.gd" id="1_qbf6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2syo"]
+
+[node name="EnemyManager" type="Area2D"]
+script = ExtResource("1_qbf6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w2syo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
